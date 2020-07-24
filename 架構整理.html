@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js畫面綁定</title>
+    <link rel="stylesheet" href="./架構整理.css">
+    <style>
+       .back{
+           position: absolute;
+           width: 150px;
+           height: 150px;
+           border-radius: 100%;
+           background-color: rgb(226, 205, 113);
+           bottom: 50px;
+           right: 100px;
+           text-align: center;
+           line-height: 150px;
+           font-size: 24px;
+           font-weight: bold;
+           cursor: pointer;
+           transition: 1s;
+           color: black;
+       }
+       .back:hover{
+           color: white;
+           background-color: rgb(8, 121, 59);
+           transition: 1s;
+       }
+       a{
+           margin: 0;
+           padding: 0;
+       }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <a href="./index.html"><div class="back">回首頁</div></a>
+        
+        <section>
+            <div class="container">
+                <div class="title">
+                    <img :src="src" alt="">
+                    <h1>{{title}}</h1>
+                </div>
+               <div class="description">
+                   <div class="number">{{ index+1 }}</div>
+                   <div class="type">{{today.type}}</div>
+                   <div class="item" :href="today.link">{{today.item}}</div>
+               </div>
+               <!-- <div v-if="index > 0" class="arrow-left" v-on:click="changeIndex(-1)"></div>
+                <div v-if="index < total-1" class="arrow-right" v-on:click="changeIndex(1)"></div> -->
+                <div v-if="index > 0" class="arrow-left" @click="changeIndex(-1)"></div>
+                <div v-if="index < total-1" class="arrow-right" @click="changeIndex(1)"></div>
+            </div>
+        </section>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+   
+   
+    <script>
+      let data={
+          src:' ./vue-logo.jpg',
+          title:' Vue.js手牽手，一起嗑光全家桶',
+          index:0,
+          menu:[
+              {type:'主廚的話',item:'餐點簡介與相關說明',link:'javascript:;'},
+              {type:'餐具擺盤',item:'萬用白瓷 VS Code 與套裝工具組',link:'javascript:;'},
+              {type:'開胃餐點',item:'中式資料綁定佐無毒 jQuery 畫面處理',link:'javascript:;'},
+              {type:'開胃餐點',item:'古早味事件燉畫面綁定',link:'javascript:;'},
+              {type:'開胃餐點',item:'清爽表單處理佐雙向資料',link:'javascript:;'},
+              {type:'開胃餐點',item:'使用者輸入焗列表呈現',link:'javascript:;'},
+              {type:'開胃餐點',item:'期間限定篩選佐資料轉換',link:'javascript:;'},
+              {type:'開胃餐點',item:'峰峰相連互動式資料表單',link:'javascript:;'},
+              {type:'風味沙拉',item:'天然 CSS 過場佐 jQuery 動畫',link:'javascript:;'},
+              {type:'風味沙拉',item:'異國風情資料觀測與設定',link:'javascript:;'},  
+             
+          ],
+          
+      }
+      let vm = new Vue({
+          el:'#app',
+          data:data,
+          methods:{
+              changeIndex(change){
+                this.index = (this.index + change + this.menu.length)%(this.total)
+                // if(this.index<0){
+                //     this.index=9
+                // }else if(this.index > 9){
+                //     this.index=0
+                // }
+                
+               
+              }
+          },
+          computed:{
+              today(){
+                  return this.menu[this.index]
+              },
+              total(){
+                return this.menu.length
+              }   
+          }
+      })
+
+
+
+    </script>
+
+
+</body>
+
+</html>

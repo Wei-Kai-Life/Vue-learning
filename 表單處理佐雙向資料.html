@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        #app{
+            background-color: #3BAF80;
+            width: 100%;
+            height: 100vh;
+        }
+        section{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+           align-items: center;
+        }
+        .container{
+            width: 600px;
+           
+           
+          
+        }
+        .title .input:nth-child(1){
+            width: 100%;
+            height: 100px;
+            /* border: 1px orangered solid; */
+            line-height: 50px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            background-color: #2B3D4C;
+            border-radius: 10px;
+            color: rgb(214, 205, 205);
+        }
+        .menu{
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px 0;
+           margin: 30px 0 30px 0;
+           width: 100%;
+           /* border: 1px black solid; */
+           display: flex;
+            justify-content: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="app">
+        <section>
+            <div class="container">
+                <div class="title">
+                    <div class="input">{{name}}，{{sex}}，年齡為{{age}}<br>{{favor.length ? '，喜歡' :''}}{{favor.join('、')}}，{{member ? '已' : '未'}}成為頻道會員</div>
+                    <div class="menu">
+                        <table>
+                            <tr>
+                                <td class="title">
+                                    姓名:
+                                </td>
+                                <td>
+                                    <input v-model="name">
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="title">
+                                    性別:
+                                </td>
+                                <td>
+                                    <input type="radio"
+                                            value="女性"
+                                            v-model="sex">
+                                            
+                                            女姓
+                                    <input type="radio"
+                                            value="男性"
+                                            v-model="sex">
+                                            男性
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="title">
+                                    年齡:
+                                </td>
+                                <td>
+                                    <select v-model="age">
+                                        <option>20歲以下</option>
+                                        <option>20-25歲間</option>
+                                        <option>26-30歲間</option>
+                                        <option >31歲以上</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="title">
+                                    興趣:
+                                </td>
+                                <td>
+                                    <input type="checkbox"
+                                           value="跑步"
+                                           v-model="favor">
+                                           跑步
+                                    <input type="checkbox"
+                                           value="唱歌"
+                                           v-model="favor">
+                                           唱歌
+                                    <input type="checkbox"
+                                           value="游泳"
+                                           v-model="favor">
+                                           游泳
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="title">
+                                    會員:
+                                </td>
+                                <td>
+                                    <input type="checkbox"
+                                          v-model="member">
+                                          加入
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    let data={
+        name:'唐偉凱',
+        sex:'男性',
+        age:'20-25歲間',
+        favor:['跑步','唱歌','游泳'],
+        member:true,
+    }
+    let vm= new Vue({
+        el:'#app',
+        data:data,
+    })
+
+
+
+</script>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06-使用者輸入焗列表呈現</title>
+    <link rel="stylesheet" href="./06-使用者輸入焗列表呈現.css">
+</head>
+<body>
+    <div id="app">
+        <section>
+            <div class="container">
+                <div class="input">
+                    <select v-model="input.type">
+                        <option value="主廚的話">主廚的話</option>
+                        <option value="餐點擺盤">餐點擺盤</option>
+                        <option value="開胃餐點">開胃餐點</option>
+                        <option value="風味沙拉">風味沙拉</option>
+                    </select>
+                    <input type="text" v-model.trim="input.title"
+                    @keyup.enter="inputHandler">
+                </div>
+
+                
+                <div class="myform">
+                    <div class="menu-items"
+                         v-for="(item,index) in menu">  
+                        <div class="number">{{index+1}}</div>
+                        <div class="type">{{item.type}}</div>
+                        <a href="">{{item.title}}</a>
+                    </div>
+                    <!-- <div class="menu-items">  
+                        <div class="number">2</div>
+                        <div class="type">餐點擺盤</div>
+                        <a href="">萬用白瓷VS Code與套裝工具組</a>
+                    </div>
+                    <div class="menu-items">  
+                        <div class="number">3</div>
+                        <div class="type">開胃餐點</div>
+                        <a href="">中式資料綁定佐無毒jQuery畫面處理</a>
+                    </div>
+                    <div class="menu-items">  
+                        <div class="number">4</div>
+                        <div class="type">開胃餐點</div>
+                        <a href="">古早味事件燉畫面綁定</a>
+                    </div>
+
+                    <div class="menu-items">  
+                        <div class="number">5</div>
+                        <div class="type">開胃餐點</div>
+                        <a href="">清爽表單處理佐雙向資料</a>
+                    </div>
+                    <div class="menu-items">  
+                        <div class="number">6</div>
+                        <div class="type">開胃餐點</div>
+                        <a href="">使用者輸入焗列表呈現</a>
+                    </div>
+                    <div class="menu-items">  
+                        <div class="number">7</div>
+                        <div class="type">開胃餐點</div>
+                        <a href="">期間限定篩選佐資料轉換</a>
+                    </div>
+                    <div class="menu-items">  
+                        <div class="number">8</div>
+                        <div class="type">開胃餐點</div>
+                        <a href="">峰峰相連互動式資料表單</a>
+                    </div>
+
+                    <div class="menu-items">  
+                        <div class="number">9</div>
+                        <div class="type">風味沙拉</div>
+                        <a href="">天然CSS過場佐jQuery動畫</a>
+                    </div>
+                    <div class="menu-items">  
+                        <div class="number">10</div>
+                        <div class="type">風味沙拉</div>
+                        <a href="">異國風情資料觀測與設定</a>
+                    </div> -->
+                    
+                    
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./06-使用者輸入焗列表呈現.js"></script>
+    <script>
+       
+
+
+
+    </script>
+</body>
+</html>

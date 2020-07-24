@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>期間限定篩選佐資料轉換</title>
+    <link rel="stylesheet" href="./07-期間限定篩選佐資料轉換.css">
+</head>
+<style>
+    .input span{
+        margin: 0 0 0 10px;
+        font-weight: bold;
+        color: #2B3D4C;
+        font-size: 18px;
+       
+    }
+    .back{
+           position: absolute;
+           width: 150px;
+           height: 150px;
+           border-radius: 100%;
+           background-color: rgb(226, 205, 113);
+           bottom: 50px;
+           right: 100px;
+           text-align: center;
+           line-height: 150px;
+           font-size: 24px;
+           font-weight: bold;
+           cursor: pointer;
+           transition: 1s;
+           color: black;
+       }
+       .back:hover{
+           color: white;
+           background-color: rgb(8, 121, 59);
+           transition: 1s;
+       }
+       a{
+           margin: 0;
+           padding: 0;
+       }
+</style>
+<body>
+    <div id="app">
+        <a href="./index.html"><div class="back">回首頁</div></a>
+        <section>
+            <div class="container">
+                <div class="input">
+                    <select v-model="input.type">
+                        <option value="全部">全部</option>
+                        <option value="主廚的話">主廚的話</option>
+                        <option value="餐點擺盤">餐點擺盤</option>
+                        <option value="開胃餐點">開胃餐點</option>
+                        <option value="風味沙拉">風味沙拉</option>
+                    </select>
+                    <input type="text" 
+                    v-model.trim="input.title"
+                    >
+                    <span>點選類別or搜尋關鍵字篩選出課程</span>
+                </div>
+
+                <div class="myform">
+                    <div class="menu-items"
+                        v-for="(item,index) in titleMenu"
+                       >  
+                        <div class="number">{{index+1}}</div>
+                        <div class="type">{{item.type}}</div>
+                        <a href="">{{item.title}}</a>
+                    </div>
+                  
+                    
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./07-期間限定篩選佐資料轉換.js"></script>
+</body>
+</html>

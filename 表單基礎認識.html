@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表單處理佐雙向資料</title>
+    <style>
+        body{
+            margin: 0;
+            background-color: #3BAF80; 
+        }
+        .output{
+            width: 404px;
+            border: black 1px solid;
+            font-size: 22px;
+            font-weight: bold;
+            margin: 155px auto 0 auto;
+            padding: 20px;
+            background-color: #2B3D4C;
+            color: white;
+            border-radius: 10px;
+            color: rgb(214, 205, 205);
+        }
+        form{
+        width: 500px;
+        border: 1px black solid;
+        margin:50px auto 0 auto;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        }
+        form div{
+            margin-bottom: 20px;
+        }
+        .back{
+           position: absolute;
+           width: 150px;
+           height: 150px;
+           border-radius: 100%;
+           background-color: rgb(226, 205, 113);
+           bottom: 50px;
+           right: 100px;
+           text-align: center;
+           line-height: 150px;
+           font-size: 24px;
+           font-weight: bold;
+           cursor: pointer;
+           transition: 1s;
+           color: black;
+       }
+       .back:hover{
+           color: white;
+           background-color: rgb(8, 121, 59);
+           transition: 1s;
+       }
+       a{
+           margin: 0;
+           padding: 0;
+       }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <a href="./index.html"><div class="back">回首頁</div></a>
+        <div class="output">{{name}}，{{sex}}，年齡為{{age}}，<br>{{favor.length ? '喜歡' : ''}}{{favor.join('、')}}{{favor.length ? '，' : ''}}{{member ? '已' : '未'}}成為頻道會員</div>
+        <form action="">
+            <div>
+                <label for="" >姓名:</label>
+                <input type="text" required v-model="name"  >
+            </div>
+            <div>
+                <label for="">性別:</label>
+                <input type="radio" required  value="男性" v-model="sex">男
+                <input type="radio" required  value="女性" v-model="sex">女
+            </div>
+            <div>
+                <label for="">年齡:</label>
+                <select v-model="age" >
+                    <option value="20歲以下">20歲以下</option>
+                    <option value="20-25歲間">20-25歲間</option>
+                    <option value="26-30歲間">26-30歲間</option>
+                    <option value="31歲以上">31歲以上</option>
+                </select>
+            </div>
+            <div>
+                <label for="">興趣:</label>
+                <input type="checkbox" value="跑步" v-model="favor">跑步
+                <input type="checkbox" value="唱歌" v-model="favor">唱歌
+                <input type="checkbox" value="游泳" v-model="favor">游泳
+            </div>
+            <div>
+                <label for="">會員:</label>
+                <input type="checkbox" v-model="member">加入
+                
+            </div>
+
+            
+
+
+            <button type="submit">送出</button>
+        </form>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        let data={
+            name:'唐偉凱',
+            sex:'男性',
+            age:'20-25歲間',
+            favor:['跑步','唱歌','游泳'],
+            member:true,
+        }
+
+        let vm = new Vue({
+            el:'#app',
+            data:data
+        })
+    </script>
+
+</body>
+</html>

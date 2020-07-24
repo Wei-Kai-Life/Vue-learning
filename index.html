@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <link rel="stylesheet" href="./架構整理.css">
+    <style>
+        section {
+            padding-top: 50px;
+        }
+
+        .container {
+            /* border: 1px black solid; */
+
+        }
+        #box{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #box a{
+            width: 50%;
+        }
+        #box div{
+            width: 100%;
+            padding: 10px 0 10px 50px;
+            font-size: 18px;
+            font-weight: bold;
+            border: 1px black solid;
+            text-align: start;
+            box-sizing: border-box;
+            border-radius: 50px;
+            margin: 5px;
+        }
+        #box div::before{
+            content: "連結:";
+            color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <section>
+            <div class="container">
+                <div class="title">
+                    <img :src="src" alt="">
+                    <!-- <h1>{{title}}</h1> -->
+                    <div id="box">
+                        
+                        
+                        
+                       
+                        <a href="./架構整理.html"><div>Vue.js畫面綁定</div></a>
+                        <a href="./表單基礎認識.html"><div>表單處理佐雙向資料</div></a>
+                        <a href="./06練習.html"><div>使用者輸入焗列表呈現</div></a>
+                        <a href="./07-期間限定篩選佐資料轉換.html"> <div>期間限定篩選佐資料轉換</div></a>
+                      
+                    </div>
+
+                </div>
+
+        </section>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+    <script>
+        let data = {
+            src: ' ./vue-logo.jpg',
+            title: ' Vue.js手牽手，一起嗑光全家桶',
+            index: 0,
+            menu: [
+                { type: '主廚的話', item: '餐點簡介與相關說明', link: 'javascript:;' },
+                { type: '餐具擺盤', item: '萬用白瓷 VS Code 與套裝工具組', link: 'javascript:;' },
+                { type: '開胃餐點', item: '中式資料綁定佐無毒 jQuery 畫面處理', link: 'javascript:;' },
+                { type: '開胃餐點', item: '古早味事件燉畫面綁定', link: 'javascript:;' },
+                { type: '開胃餐點', item: '清爽表單處理佐雙向資料', link: 'javascript:;' },
+                { type: '開胃餐點', item: '使用者輸入焗列表呈現', link: 'javascript:;' },
+                { type: '開胃餐點', item: '期間限定篩選佐資料轉換', link: 'javascript:;' },
+                { type: '開胃餐點', item: '峰峰相連互動式資料表單', link: 'javascript:;' },
+                { type: '風味沙拉', item: '天然 CSS 過場佐 jQuery 動畫', link: 'javascript:;' },
+                { type: '風味沙拉', item: '異國風情資料觀測與設定', link: 'javascript:;' },
+
+            ],
+
+        }
+        let vm = new Vue({
+            el: '#app',
+            data: data,
+            methods: {
+                changeIndex(change) {
+                    this.index = (this.index + change + this.menu.length) % (this.total)
+                    // if(this.index<0){
+                    //     this.index=9
+                    // }else if(this.index > 9){
+                    //     this.index=0
+                    // }
+
+
+                }
+            },
+            computed: {
+                today() {
+                    return this.menu[this.index]
+                },
+                total() {
+                    return this.menu.length
+                }
+            }
+        })
+
+
+
+    </script>
+
+
+</body>
+
+</html>
