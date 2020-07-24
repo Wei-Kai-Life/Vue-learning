@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bootstrap切版</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #section-1 {
+            width: 100%;
+            height: 93vh;
+        }
+
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+
+        }
+
+        /* .navbar {
+            height: 10vh;
+            min-height: 100px;
+        } */
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            width: 100%;
+            height: 100%;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .a1 {
+            background-image: url("menu3.jpg");
+        }
+
+        .a2 {
+            background-image: url("menu4.jpg");
+        }
+
+        .a3 {
+            background-image: url("menu5.png");
+        }
+
+        .a4 {
+            background-image: url("https://content.shopback.com/tw/wp-content/uploads/2019/02/03175736/Cat%EF%BC%BFscratch%EF%BC%BFboard-1200x675.jpg");
+            background-position: top    ;
+        }
+
+        .col-4 {
+            border: 1px solid red;
+        }
+
+        #section-3 {
+            position: relative;
+            width: 100%;
+            height: 4000px;
+        }
+
+        #section-3 .lax-pictre {
+            width: 100%;
+            height: 100vh;
+            background-image: url("https://i1.wp.com/inews.gtimg.com/newsapp_match/0/1119419568/0");
+            background-position: center;
+
+            background-size: cover;
+            top: 0;
+            position: sticky;
+        }
+        .lax-pictre div:nth-child(1){
+            font-size: 36px;
+            position: absolute;
+            top: 150px;
+            left: 50px;
+            color: cornsilk;
+            opacity: 0;
+        }
+        .lax-pictre div:nth-child(2){
+            font-size: 36px;
+            position: absolute;
+            top: 350px;
+            font-weight: bold;
+            left: 50px;
+        }
+        #first h3 {
+            text-align: center;
+            padding: 30px 0 5px 0;
+        }
+
+        #first h5 {
+            padding: 20px 20px;
+        }
+
+        footer {
+            width: 100%;
+            height: 80px;
+        }
+
+        footer div {
+            width: 100%;
+            height: 100%;
+            background-color: brown;
+            text-align: center;
+            line-height: 80px;
+            font-size: 32px;
+            font-weight: 800;
+        }
+    </style>
+
+</head>
+
+<body>
+    <section id="section-0">
+        <nav class="navbar navbar-light  bg-warning">
+            <a class="navbar-brand">Navbar</a>
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </nav>
+    </section>
+
+
+    <section id="section-1">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide a1"></div>
+                <div class="swiper-slide a2"></div>
+                <div class="swiper-slide a3"></div>
+                <div class="swiper-slide a4"></div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+
+    </section>
+
+
+    <section id="section-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 d-flex justify-content-center">
+                    <div class="card m-5" style="width: 18rem;">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSwFWh4YiCPf5xovCmPwb1MyEFMnP3sDN9XnQ&usqp=CAU"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 d-flex justify-content-center">
+                    <div class="card m-5" style="width: 18rem;">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQvbRxLr2vXUzOwQI-ISRNPBfFiHaztApuzvQ&usqp=CAU"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 d-flex justify-content-center">
+                    <div class="card m-5" style="width: 18rem;">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR7nSP7fnH6YRStVdHxyk1r7u9UrtRoRa7B7g&usqp=CAU"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+
+    <section id="section-3">
+        <div class="lax-pictre">
+            <div class="lax" data-lax-opacity="(document.querySelector('#section-3').offsetTop) 0,(document.querySelector('#section-3').offsetTop+500) 1,(document.querySelector('#section-3').offsetTop+2000) 0">哈囉你好嗎，衷心感謝</div>
+            <div class="lax" data-lax-opacity="(document.querySelector('#section-3').offsetTop+2000) 0,(document.querySelector('#section-3').offsetTop+2500) 1,(document.querySelector('#section-3').offsetTop+4000) 0) ">珍重感謝，期待再相逢</div>
+        </div>
+    </section>
+
+
+    <section id="section-4">
+        <div class="container">
+            <div class="row d-flex justify-content-center py-5" style="font-size: 36px;">
+                welcome
+            </div>
+            <div class="row mb-5    ">
+                <div class="col-lg-6 d-flex justify-content-center">
+                    <img class="w-100 h-100"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQYdCr-VWhqm1HAjHtPKBOJ8eZt6IOeS3ToCw&usqp=CAU"
+                        alt="">
+                </div>
+                <div class="col-lg-6" id="first">
+                    <h3>病毒</h3>
+                    <br>
+                    <h5>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere cum aspernatur saepe hic vel
+                        repellendus eum voluptas enim aliquam sint. Enim, nesciunt. Obcaecati, omnis maxime velit quod
+                        laboriosam assumenda ullam.</h5>
+                </div>
+            </div>
+            <div class="row mb-5">
+
+                <div class="order-1 order-lg-0 col-lg-6" id="first">
+                    <h3>病毒</h3>
+                    <br>
+                    <h5>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere cum aspernatur saepe hic vel
+                        repellendus eum voluptas enim aliquam sint. Enim, nesciunt. Obcaecati, omnis maxime velit quod
+                        laboriosam assumenda ullam.</h5>
+                </div>
+                <div class="col-lg-6 d-flex justify-content-center ">
+                    <img class="w-100 h-100"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQYdCr-VWhqm1HAjHtPKBOJ8eZt6IOeS3ToCw&usqp=CAU"
+                        alt="">
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+    </section>
+
+
+    <footer>
+        <div>bootstrap切版練習</div>
+    </footer>
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/lax.js"></script>
+
+
+    <script>
+
+        var swiper = new Swiper('.swiper-container', {
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+
+
+
+        //初始化
+        window.onload = function () {
+            lax.setup() // init
+
+            const updateLax = () => {
+                lax.update(window.scrollY)
+                window.requestAnimationFrame(updateLax)
+            }
+
+            window.requestAnimationFrame(updateLax)
+        }
+    </script>
+</body>
+
+</html>
