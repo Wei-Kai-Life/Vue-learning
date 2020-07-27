@@ -1,0 +1,54 @@
+body{
+    margin: 0;
+}
+section{
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: cadetblue;
+    padding: 100px 0 0 0;
+}
+.container{
+    width: 700px;
+    height: 500px;
+    /* border: 1px black solid; */
+    margin: auto;
+}
+.inputbar{
+    width: 100%;
+    height: 50px;
+    background-color: rgb(30, 83, 46);
+    text-align: center;
+    padding: 10px 0 0 0;
+    box-sizing: border-box;
+    border-radius: 50px;
+}
+#type{
+    width: 150px;
+    height: 30px;
+}
+#title{
+    width: 400px;
+    height: 30px;
+    margin: 0 0 0 20px;
+}
+.output{
+    margin: 50px 0  0 200px;
+    display: flex;
+}
+.output div:nth-child(1){
+    width: 50px;
+    height: 40px;
+    background-color: rgb(230, 66, 98);
+    border-radius: 50px 0 0 50px;
+    text-align: center;
+    line-height: 40px;
+}
+.output div:nth-child(2){
+    width: 200px;
+    height: 40px;
+    background-color: rgb(82, 185, 143);
+    border-radius: 0 50px 50px 0;
+    text-align: center;
+    line-height: 40px;
+}

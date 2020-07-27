@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./08-峰峰相連互動式資料表單.css">
+    <style>
+         .input span{
+        margin: 0 0 0 10px;
+        font-weight: bold;
+        color: #2B3D4C;
+        font-size: 18px;
+       
+    }
+    .back{
+           position: absolute;
+           width: 150px;
+           height: 150px;
+           border-radius: 100%;
+           background-color: rgb(226, 205, 113);
+           bottom: 50px;
+           right: 100px;
+           text-align: center;
+           line-height: 150px;
+           font-size: 24px;
+           font-weight: bold;
+           cursor: pointer;
+           transition: 1s;
+           color: black;
+       }
+       .back:hover{
+           color: white;
+           background-color: rgb(8, 121, 59);
+           transition: 1s;
+       }
+       a{
+           margin: 0;
+           padding: 0;
+       }
+    </style>
+</head>
+<body>
+   
+    <div id="app">
+        <a href="./index.html"><div class="back">回首頁</div></a>
+        <section>
+            <div class="container">
+                <div class="inputbar">
+                    <select name="" id="type"
+                    v-model="input.type">
+                        <option :value="null">請選擇</option>
+                        <option v-for="item in typeList.sort">{{item}}</option>
+                        <!-- <option value="">餐點擺盤</option>
+                        <option value="">開胃餐點</option>
+                        <option value="">風味沙拉</option>
+                        <option value="">總匯拼盤</option>
+                        <option value="">用餐插曲</option>
+                        <option value="">主廚推薦</option>
+                        <option value="">精選甜點</option>   -->
+                    </select>
+                    <select name="" id="title"
+                    v-model="input.title">
+                        <option :value="null">請選擇</option>
+                        <option v-for="item in titleList.sort">{{item}}</option>
+                        <!-- <option value="" selected>餐點簡介與相關說明</option>
+                        <option value="">餐後心得與其他資訊</option> -->
+                    </select>
+
+                </div>
+                <div class="output"
+                v-if="content">
+                    <div>{{content.index+1}}</div>
+                    <div>{{content.link}}</div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="./08-峰峰相連互動式資料表單.js"></script>
+<script>
+    
+</script>
+</html>
